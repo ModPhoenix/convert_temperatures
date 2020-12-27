@@ -15,9 +15,11 @@ fn main() {
         .read_line(&mut unit)
         .expect("Failed to read line");
 
-    if unit.trim().to_lowercase() == "f" {
+    let unit_in_lowercase = unit.trim().to_lowercase();
+
+    if unit_in_lowercase == "f" {
         println!("You pick Fahrenheit: {}", unit);
-    } else if unit.trim().to_lowercase() == "c" {
+    } else if unit_in_lowercase == "c" {
         println!("You pick Celsius: {}", unit);
     }
 
@@ -33,11 +35,11 @@ fn main() {
 
     println!("You enter a value: {}", value);
 
-    if unit.trim().to_lowercase() == "f" {
+    if unit_in_lowercase == "f" {
         let result = ((value + 40 as f32) / 1.8) - 40 as f32;
 
         println!("{} degrees Fahrenheit = {} degrees Celsius", value, result);
-    } else if unit.trim().to_lowercase() == "c" {
+    } else if unit_in_lowercase == "c" {
         let result = ((value + 40 as f32) * 1.8) - 40 as f32;
 
         println!("{} degrees Celsius = {} degrees Fahrenheit", value, result);
